@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -7,21 +5,20 @@ class ViewController: UIViewController {
     //Outlets
     
     @IBOutlet weak var cityName: UILabel!
+    @IBOutlet weak var weatherType: UILabel!
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var humidity: UILabel!
     @IBOutlet weak var uvLevel: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var weatherImg: UIImageView!
     @IBOutlet weak var background: UIImageView!
+   
     //Constants
     
     
     
     //Variables
     var currentWeather: CurrentWeather!
-    
-    
-    
     //Functions
     
     override func viewDidLoad() {
@@ -38,7 +35,7 @@ class ViewController: UIViewController {
         specialEffect(view: background, intensity: 45)
         specialEffect(view: weatherImg, intensity: -45)
     }
-    
+
     //Function Effect when tilt
     func specialEffect(view: UIView, intensity: Double) {
         //Set Horizontal Motion
@@ -54,12 +51,12 @@ class ViewController: UIViewController {
         movement.motionEffects = [horizontalMotion, verticalMotion]
         view.addMotionEffect(movement)
     }
-    
+
     //Update UI
     func updateUI() {
         cityName.text = currentWeather.cityName
         temperature.text = "\(currentWeather.currentTemp)"
-        //weatherType.text = currentWeather.weatherType
+        weatherType.text = currentWeather.weatherType
         date.text = currentWeather.date
     }
 }

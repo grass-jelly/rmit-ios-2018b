@@ -1,11 +1,10 @@
-
-
 import Foundation
 import Alamofire
 import SwiftyJSON
 
 class CurrentWeather {
     
+    //Variable
     private var _cityName: String!
     private var _date: String!
     private var _weatherType: String!
@@ -56,7 +55,7 @@ class CurrentWeather {
             print(currentDate)
             self._weatherType = json["weather"][0]["main"].stringValue
             let downloadedTemp = json["main"]["temp"].double
-            self._currentTemp = downloadedTemp! - 273.15.rounded(toPlaces: 0)
+            self._currentTemp = downloadedTemp! - 273.15
             completed()
         }
     }
