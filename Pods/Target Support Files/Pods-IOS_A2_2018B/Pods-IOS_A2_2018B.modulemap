@@ -1,0 +1,6 @@
+framework module Pods_IOS_A2_2018B {
+  umbrella header "Pods-IOS_A2_2018B-umbrella.h"
+
+  export *
+  module * { export * }
+}
