@@ -67,29 +67,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
-//    //Function apply Effect
-//    func applyEffect() {
-//        specialEffect(view: background, intensity: 45)
-//        specialEffect(view: weatherImg, intensity: -45)
-//    }
-//
-//    //Function Effect when tilt
-//    func specialEffect(view: UIView, intensity: Double) {
-//        //Set Horizontal Motion
-//        let horizontalMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-//        horizontalMotion.minimumRelativeValue = -intensity
-//        horizontalMotion.maximumRelativeValue = intensity
-//        //Set Vertical Motion
-//        let verticalMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-//        verticalMotion.minimumRelativeValue = -intensity
-//        verticalMotion.maximumRelativeValue = intensity
-//        //Set movement
-//        let movement = UIMotionEffectGroup()
-//        movement.motionEffects = [horizontalMotion, verticalMotion]
-//        view.addMotionEffect(movement)
-//    }
-
     //Update UI
     func updateUI() {
         cityName.text = currentWeather.cityName
