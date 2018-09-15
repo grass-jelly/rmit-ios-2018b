@@ -21,75 +21,83 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudBG" translatesAutoresizingMaskIntoConstraints="NO" id="DYO-4j-76w">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partlysunny" translatesAutoresizingMaskIntoConstraints="NO" id="Ijz-gA-UN6">
-                                <rect key="frame" x="94" y="224" width="186" height="141"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS7-ze-NQP">
-                                <rect key="frame" x="112" y="58" width="151" height="33"/>
+                                <rect key="frame" x="16" y="58" width="343" height="33"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ko-Pt-OY3">
-                                <rect key="frame" x="106" y="121" width="162" height="24"/>
+                                <rect key="frame" x="106" y="118" width="162" height="24"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NZ-dK-E76">
-                                <rect key="frame" x="109" y="179" width="156" height="29"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                <rect key="frame" x="16" y="153" width="343" height="41"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp1-9R-YkS">
-                                <rect key="frame" x="149" y="373" width="78" height="21"/>
+                                <rect key="frame" x="148" y="234" width="78" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UV Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uic-AB-6Wt">
-                                <rect key="frame" x="149" y="415" width="77" height="21"/>
+                                <rect key="frame" x="148" y="263" width="77" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skM-Kx-G6k">
-                                <rect key="frame" x="100" y="460" width="177" height="21"/>
+                                <rect key="frame" x="99" y="292" width="177" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6T-gM-Djl">
+                                <rect key="frame" x="141" y="617" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hour by Hour"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-5u-9eU">
+                                <rect key="frame" x="3" y="617" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pre 7 Days"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw5-0h-YCC">
+                                <rect key="frame" x="293" y="617" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next 7 Days"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0xU-HD-lG5"/>
-                            <constraint firstItem="oS7-ze-NQP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="2QG-3G-1Vo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="skM-Kx-G6k" secondAttribute="trailing" constant="98" id="3Sl-lf-hyO"/>
-                            <constraint firstItem="2NZ-dK-E76" firstAttribute="top" secondItem="8ko-Pt-OY3" secondAttribute="bottom" constant="34" id="3lm-eH-t3p"/>
-                            <constraint firstItem="8ko-Pt-OY3" firstAttribute="top" secondItem="oS7-ze-NQP" secondAttribute="bottom" constant="30" id="4sq-wN-RB3"/>
+                            <constraint firstItem="oS7-ze-NQP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2QG-3G-1Vo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="skM-Kx-G6k" secondAttribute="trailing" constant="99" id="3Sl-lf-hyO"/>
+                            <constraint firstItem="2NZ-dK-E76" firstAttribute="top" secondItem="8ko-Pt-OY3" secondAttribute="bottom" constant="11" id="3lm-eH-t3p"/>
+                            <constraint firstItem="8ko-Pt-OY3" firstAttribute="top" secondItem="oS7-ze-NQP" secondAttribute="bottom" constant="27" id="4sq-wN-RB3"/>
                             <constraint firstItem="8ko-Pt-OY3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="7hR-wM-u32"/>
-                            <constraint firstItem="skM-Kx-G6k" firstAttribute="top" secondItem="Uic-AB-6Wt" secondAttribute="bottom" constant="24" id="80c-sy-xq1"/>
-                            <constraint firstItem="2NZ-dK-E76" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="109" id="BIr-if-gv3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uic-AB-6Wt" secondAttribute="trailing" constant="149" id="C1e-kP-7vG"/>
-                            <constraint firstItem="skM-Kx-G6k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Eje-Is-zgh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2NZ-dK-E76" secondAttribute="trailing" constant="110" id="FBH-bV-RiW"/>
-                            <constraint firstItem="Uic-AB-6Wt" firstAttribute="top" secondItem="Tp1-9R-YkS" secondAttribute="bottom" constant="21" id="HIa-dy-ypl"/>
+                            <constraint firstItem="skM-Kx-G6k" firstAttribute="top" secondItem="Uic-AB-6Wt" secondAttribute="bottom" constant="8" id="80c-sy-xq1"/>
+                            <constraint firstItem="2NZ-dK-E76" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BIr-if-gv3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uic-AB-6Wt" secondAttribute="trailing" constant="150" id="C1e-kP-7vG"/>
+                            <constraint firstItem="skM-Kx-G6k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="Eje-Is-zgh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2NZ-dK-E76" secondAttribute="trailing" constant="16" id="FBH-bV-RiW"/>
+                            <constraint firstItem="Uic-AB-6Wt" firstAttribute="top" secondItem="Tp1-9R-YkS" secondAttribute="bottom" constant="8" id="HIa-dy-ypl"/>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KSt-b7-xEi"/>
-                            <constraint firstItem="8ko-Pt-OY3" firstAttribute="top" secondItem="oS7-ze-NQP" secondAttribute="bottom" constant="30" id="MrK-Wo-eRD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tp1-9R-YkS" secondAttribute="trailing" constant="148" id="MxD-UO-Y5w"/>
-                            <constraint firstItem="Ijz-gA-UN6" firstAttribute="top" secondItem="2NZ-dK-E76" secondAttribute="bottom" constant="16" id="Ofn-K1-a9b"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ijz-gA-UN6" secondAttribute="trailing" constant="95" id="PIw-uv-hHs"/>
+                            <constraint firstItem="8ko-Pt-OY3" firstAttribute="top" secondItem="oS7-ze-NQP" secondAttribute="bottom" constant="27" id="MrK-Wo-eRD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tp1-9R-YkS" secondAttribute="trailing" constant="149" id="MxD-UO-Y5w"/>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xot-wW-uyc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ko-Pt-OY3" secondAttribute="trailing" constant="107" id="dAl-Hz-2jM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oS7-ze-NQP" secondAttribute="trailing" constant="112" id="g3h-Ns-pYX"/>
-                            <constraint firstItem="Tp1-9R-YkS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="iAo-Gn-Kpa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oS7-ze-NQP" secondAttribute="trailing" constant="16" id="g3h-Ns-pYX"/>
+                            <constraint firstItem="Tp1-9R-YkS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="iAo-Gn-Kpa"/>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iVp-dh-NHw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="skM-Kx-G6k" secondAttribute="bottom" constant="186" id="nFm-e4-dGq"/>
-                            <constraint firstItem="Tp1-9R-YkS" firstAttribute="top" secondItem="Ijz-gA-UN6" secondAttribute="bottom" constant="8" id="qMQ-52-3xU"/>
-                            <constraint firstItem="Ijz-gA-UN6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="tOy-nX-u41"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="skM-Kx-G6k" secondAttribute="bottom" constant="354" id="nFm-e4-dGq"/>
                             <constraint firstItem="oS7-ze-NQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="wSY-33-S0j"/>
-                            <constraint firstItem="Uic-AB-6Wt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="xQ3-IE-Udm"/>
+                            <constraint firstItem="Uic-AB-6Wt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="xQ3-IE-Udm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -100,7 +108,6 @@
                         <outlet property="humidity" destination="Tp1-9R-YkS" id="dbv-ZX-Ol2"/>
                         <outlet property="temperature" destination="2NZ-dK-E76" id="wcf-jk-pVR"/>
                         <outlet property="uvLevel" destination="Uic-AB-6Wt" id="OOt-bs-ToV"/>
-                        <outlet property="weatherImg" destination="Ijz-gA-UN6" id="Zz0-qw-fAi"/>
                         <outlet property="weatherType" destination="8ko-Pt-OY3" id="zfm-7I-dlU"/>
                     </connections>
                 </viewController>
@@ -111,6 +118,5 @@
     </scenes>
     <resources>
         <image name="cloudBG" width="327" height="582"/>
-        <image name="partlysunny" width="186" height="141"/>
     </resources>
 </document>

@@ -1,6 +1,7 @@
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //Outlets
     
@@ -14,50 +15,108 @@ class ViewController: UIViewController {
     @IBOutlet weak var background: UIImageView!
    
     //Constants
-    
-    
+    let locationManager = CLLocationManager()
     
     //Variables
     var currentWeather: CurrentWeather!
+    var currentLocation: CLLocation!
+    
     //Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        applyEffect()
+        //applyEffect()
         currentWeather = CurrentWeather()
-        currentWeather.downloadCurrentWeather {
-            self.updateUI()
+        callDelegate()
+        setupLocation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        locationAuthCheck()
+    }
+    
+    func callDelegate() {
+        locationManager.delegate = self
+    }
+    
+    func setupLocation() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    //Check if the user has allowed to use current location
+    func locationAuthCheck() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            //Get device location
+            currentLocation = locationManager.location
+            //Pass coordinate to API in Extras.swift
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            //Check the coordinate
+            print("Current latitude: ", currentLocation.coordinate.latitude)
+            print("Current longitude: ",  currentLocation.coordinate.longitude)
+            //Download API data of that coordinate
+            currentWeather.downloadCurrentWeather {
+                //Update UI after download successful
+                self.updateUI()
+            }
+        }else{
+            locationManager.requestWhenInUseAuthorization() //Ask permission again
+            locationAuthCheck() //Re-check
         }
     }
     
-    //Function apply Effect
-    func applyEffect() {
-        specialEffect(view: background, intensity: 45)
-        specialEffect(view: weatherImg, intensity: -45)
-    }
-
-    //Function Effect when tilt
-    func specialEffect(view: UIView, intensity: Double) {
-        //Set Horizontal Motion
-        let horizontalMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        horizontalMotion.minimumRelativeValue = -intensity
-        horizontalMotion.maximumRelativeValue = intensity
-        //Set Vertical Motion
-        let verticalMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        verticalMotion.minimumRelativeValue = -intensity
-        verticalMotion.maximumRelativeValue = intensity
-        //Set movement
-        let movement = UIMotionEffectGroup()
-        movement.motionEffects = [horizontalMotion, verticalMotion]
-        view.addMotionEffect(movement)
-    }
+    
+//    //Function apply Effect
+//    func applyEffect() {
+//        specialEffect(view: background, intensity: 45)
+//        specialEffect(view: weatherImg, intensity: -45)
+//    }
+//
+//    //Function Effect when tilt
+//    func specialEffect(view: UIView, intensity: Double) {
+//        //Set Horizontal Motion
+//        let horizontalMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+//        horizontalMotion.minimumRelativeValue = -intensity
+//        horizontalMotion.maximumRelativeValue = intensity
+//        //Set Vertical Motion
+//        let verticalMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+//        verticalMotion.minimumRelativeValue = -intensity
+//        verticalMotion.maximumRelativeValue = intensity
+//        //Set movement
+//        let movement = UIMotionEffectGroup()
+//        movement.motionEffects = [horizontalMotion, verticalMotion]
+//        view.addMotionEffect(movement)
+//    }
 
     //Update UI
     func updateUI() {
         cityName.text = currentWeather.cityName
-        temperature.text = "\(currentWeather.currentTemp)"
+        temperature.text = "\(currentWeather.currentTemp)*C"
         weatherType.text = currentWeather.weatherType
         date.text = currentWeather.date
+        humidity.text = "\(currentWeather.humidity)%"
+        uvLevel.text = "\(currentWeather.uvLevel)"
+        changeColor()
+    }
+    
+    //Change color of text based on UV Level
+    func changeColor() {
+        if currentWeather.uvLevel >= 1 && currentWeather.uvLevel <= 2{
+            uvLevel.textColor = UIColor.green
+        }
+        else if currentWeather.uvLevel >= 3 && currentWeather.uvLevel <= 5{
+            uvLevel.textColor = UIColor.yellow
+        }
+        else if currentWeather.uvLevel >= 6 && currentWeather.uvLevel <= 7{
+            uvLevel.textColor = UIColor.orange
+        }
+        else if currentWeather.uvLevel >= 8 && currentWeather.uvLevel <= 10{
+            uvLevel.textColor = UIColor.red
+        }else{
+            uvLevel.textColor = UIColor.purple
+        }
     }
 }
 
