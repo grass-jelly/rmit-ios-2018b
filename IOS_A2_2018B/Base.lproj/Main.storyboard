@@ -22,54 +22,61 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS7-ze-NQP">
-                                <rect key="frame" x="16" y="58" width="343" height="33"/>
+                                <rect key="frame" x="16" y="150" width="343" height="33"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ko-Pt-OY3">
-                                <rect key="frame" x="106" y="118" width="162" height="24"/>
+                                <rect key="frame" x="106" y="210" width="162" height="24"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NZ-dK-E76">
-                                <rect key="frame" x="16" y="153" width="343" height="41"/>
+                                <rect key="frame" x="16" y="245" width="343" height="41"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp1-9R-YkS">
-                                <rect key="frame" x="148" y="234" width="78" height="21"/>
+                                <rect key="frame" x="148" y="309" width="78" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UV Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uic-AB-6Wt">
-                                <rect key="frame" x="148" y="263" width="77" height="21"/>
+                                <rect key="frame" x="148" y="338" width="77" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skM-Kx-G6k">
-                                <rect key="frame" x="99" y="292" width="177" height="21"/>
+                                <rect key="frame" x="99" y="367" width="177" height="21"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6T-gM-Djl">
-                                <rect key="frame" x="141" y="617" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hour by Hour"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-sJ-a5V">
+                                <rect key="frame" x="-1" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Current Weather " id="PLo-D9-Bvq"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-nl-oYU">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbH-b3-9j2">
+                                <rect key="frame" x="141" y="617" width="93" height="30"/>
+                                <state key="normal" title="Hour By Hour"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-5u-9eU">
-                                <rect key="frame" x="3" y="617" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pre 7 Days"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg3-3q-Xkn">
+                                <rect key="frame" x="16" y="617" width="81" height="30"/>
+                                <state key="normal" title="Prev 7 Days"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw5-0h-YCC">
-                                <rect key="frame" x="293" y="617" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqd-lS-DgQ">
+                                <rect key="frame" x="277" y="617" width="82" height="30"/>
                                 <state key="normal" title="Next 7 Days"/>
                             </button>
                         </subviews>
@@ -79,25 +86,41 @@
                             <constraint firstItem="oS7-ze-NQP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2QG-3G-1Vo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="skM-Kx-G6k" secondAttribute="trailing" constant="99" id="3Sl-lf-hyO"/>
                             <constraint firstItem="2NZ-dK-E76" firstAttribute="top" secondItem="8ko-Pt-OY3" secondAttribute="bottom" constant="11" id="3lm-eH-t3p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Des-sJ-a5V" secondAttribute="trailing" constant="1" id="3sp-rx-7Pt"/>
                             <constraint firstItem="8ko-Pt-OY3" firstAttribute="top" secondItem="oS7-ze-NQP" secondAttribute="bottom" constant="27" id="4sq-wN-RB3"/>
+                            <constraint firstItem="dg3-3q-Xkn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5pS-4N-OPz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tqd-lS-DgQ" secondAttribute="bottom" constant="20" id="7LW-Gi-sf7"/>
                             <constraint firstItem="8ko-Pt-OY3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="7hR-wM-u32"/>
                             <constraint firstItem="skM-Kx-G6k" firstAttribute="top" secondItem="Uic-AB-6Wt" secondAttribute="bottom" constant="8" id="80c-sy-xq1"/>
+                            <constraint firstItem="Des-sJ-a5V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-1" id="Aib-99-cxA"/>
                             <constraint firstItem="2NZ-dK-E76" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BIr-if-gv3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uic-AB-6Wt" secondAttribute="trailing" constant="150" id="C1e-kP-7vG"/>
                             <constraint firstItem="skM-Kx-G6k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="Eje-Is-zgh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jbH-b3-9j2" secondAttribute="bottom" constant="20" id="F8F-Ad-LU1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2NZ-dK-E76" secondAttribute="trailing" constant="16" id="FBH-bV-RiW"/>
                             <constraint firstItem="Uic-AB-6Wt" firstAttribute="top" secondItem="Tp1-9R-YkS" secondAttribute="bottom" constant="8" id="HIa-dy-ypl"/>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KSt-b7-xEi"/>
                             <constraint firstItem="8ko-Pt-OY3" firstAttribute="top" secondItem="oS7-ze-NQP" secondAttribute="bottom" constant="27" id="MrK-Wo-eRD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tp1-9R-YkS" secondAttribute="trailing" constant="149" id="MxD-UO-Y5w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tqd-lS-DgQ" secondAttribute="trailing" constant="16" id="SH4-c4-FJW"/>
+                            <constraint firstItem="tqd-lS-DgQ" firstAttribute="leading" secondItem="jbH-b3-9j2" secondAttribute="trailing" constant="43" id="T9g-md-6a2"/>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xot-wW-uyc"/>
+                            <constraint firstItem="oS7-ze-NQP" firstAttribute="top" secondItem="yGt-nl-oYU" secondAttribute="bottom" constant="50" id="ZEd-VK-2CO"/>
+                            <constraint firstItem="tqd-lS-DgQ" firstAttribute="leading" secondItem="jbH-b3-9j2" secondAttribute="trailing" constant="43" id="cgS-sR-eUf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ko-Pt-OY3" secondAttribute="trailing" constant="107" id="dAl-Hz-2jM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oS7-ze-NQP" secondAttribute="trailing" constant="16" id="g3h-Ns-pYX"/>
+                            <constraint firstItem="Des-sJ-a5V" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hrL-Dv-BUZ"/>
                             <constraint firstItem="Tp1-9R-YkS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="iAo-Gn-Kpa"/>
                             <constraint firstItem="DYO-4j-76w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iVp-dh-NHw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="skM-Kx-G6k" secondAttribute="bottom" constant="354" id="nFm-e4-dGq"/>
-                            <constraint firstItem="oS7-ze-NQP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="wSY-33-S0j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dg3-3q-Xkn" secondAttribute="bottom" constant="20" id="lFn-1I-D1d"/>
+                            <constraint firstItem="yGt-nl-oYU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="le5-W9-hll"/>
+                            <constraint firstItem="yGt-nl-oYU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="m2W-5t-1qO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="skM-Kx-G6k" secondAttribute="bottom" constant="279" id="nFm-e4-dGq"/>
+                            <constraint firstItem="yGt-nl-oYU" firstAttribute="top" secondItem="Des-sJ-a5V" secondAttribute="bottom" id="rOh-mb-GWp"/>
+                            <constraint firstItem="jbH-b3-9j2" firstAttribute="leading" secondItem="dg3-3q-Xkn" secondAttribute="trailing" constant="44" id="vLu-6M-ojl"/>
+                            <constraint firstItem="jbH-b3-9j2" firstAttribute="leading" secondItem="dg3-3q-Xkn" secondAttribute="trailing" constant="44" id="xAc-BM-zqv"/>
                             <constraint firstItem="Uic-AB-6Wt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="xQ3-IE-Udm"/>
+                            <constraint firstItem="yGt-nl-oYU" firstAttribute="top" secondItem="Des-sJ-a5V" secondAttribute="bottom" id="zRr-4T-vpV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -106,12 +129,22 @@
                         <outlet property="cityName" destination="oS7-ze-NQP" id="ZtT-rD-hWE"/>
                         <outlet property="date" destination="skM-Kx-G6k" id="llg-Y1-r1p"/>
                         <outlet property="humidity" destination="Tp1-9R-YkS" id="dbv-ZX-Ol2"/>
+                        <outlet property="searchCity" destination="yGt-nl-oYU" id="oqb-Jz-Shp"/>
+                        <outlet property="searchDisplayController" destination="Gnu-je-yFu" id="Lv9-2g-JOW"/>
                         <outlet property="temperature" destination="2NZ-dK-E76" id="wcf-jk-pVR"/>
                         <outlet property="uvLevel" destination="Uic-AB-6Wt" id="OOt-bs-ToV"/>
                         <outlet property="weatherType" destination="8ko-Pt-OY3" id="zfm-7I-dlU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Gnu-je-yFu">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="WWO-1j-3xg"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="ues-Ek-r2B"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="PBj-d6-bb7"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="FXj-E5-YLm"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>

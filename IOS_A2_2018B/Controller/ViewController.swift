@@ -5,18 +5,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //Outlets
     
+    @IBOutlet weak var searchCity: UISearchBar!
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var weatherType: UILabel!
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var humidity: UILabel!
     @IBOutlet weak var uvLevel: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var weatherImg: UIImageView!
     @IBOutlet weak var background: UIImageView!
    
     //Constants
     let locationManager = CLLocationManager()
-    
+    let hour = Calendar.current.component(.hour, from: Date())
+
     //Variables
     var currentWeather: CurrentWeather!
     var currentLocation: CLLocation!
@@ -25,7 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //applyEffect()
+        changeBGImg()
         currentWeather = CurrentWeather()
         callDelegate()
         setupLocation()
@@ -43,6 +44,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
+    }
+    //Check the coordinate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print(location.coordinate)
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+        }
     }
     
     //Check if the user has allowed to use current location
@@ -77,10 +86,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         uvLevel.text = "\(currentWeather.uvLevel)"
         changeColor()
     }
-    
+    //Change Background based on current time
+    func changeBGImg(){
+        if hour >= 18 || hour <= 5 {
+            background.image = UIImage(named: "nightTIme")
+            cityName.textColor = UIColor.white
+        }
+        else {
+            background.image = UIImage(named: "cloudBG")
+        }
+        print(hour)
+    }
     //Change color of text based on UV Level
     func changeColor() {
-        if currentWeather.uvLevel >= 1 && currentWeather.uvLevel <= 2{
+        if currentWeather.uvLevel >= 0 && currentWeather.uvLevel <= 2{
             uvLevel.textColor = UIColor.green
         }
         else if currentWeather.uvLevel >= 3 && currentWeather.uvLevel <= 5{
@@ -93,6 +112,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             uvLevel.textColor = UIColor.red
         }else{
             uvLevel.textColor = UIColor.purple
+        }
+    }
+    //Search Bar Completed
+    func searchBarCompleted(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let locationString = searchBar.text, !locationString.isEmpty {
+            updateWeatherForLocation(location: locationString)
+        }
+        
+    }
+    
+    func updateWeatherForLocation (location:String) {
+        CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in
+            if error == nil {
+                if let location = placemarks?.first?.location {
+                    Location.sharedInstance.latitude = location.coordinate.latitude
+                    Location.sharedInstance.longitude = location.coordinate.longitude
+                    self.currentWeather.downloadCurrentWeather {
+                        //Update UI after download successful
+                        self.updateUI()
+                    }
+                }
+            }
         }
     }
 }
