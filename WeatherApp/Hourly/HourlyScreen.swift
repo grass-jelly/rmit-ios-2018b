@@ -12,12 +12,20 @@ import CoreLocation
 class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     let api = "https://api.darksky.net/forecast/b9fc9277797647a38161d0f28d058376/"
     let locationManager = CLLocationManager()
+    
     var hourlyData:[HourlyWeather] = []
+    
+    // display cells according to settings popup
     var tempAsC:Bool = true
+    var kph:Bool = true
+    
+    // display cells according to segmented control 
+    var showing:String = "temp"
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var segmentedCtrl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +42,24 @@ class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDele
             (notification) in
             let popup = notification.object as! HourlyPopup
             self.tempAsC = popup.segmentCtrl.selectedSegmentIndex == 0 ? true : false
+            self.kph = popup.segmentCtrl2.selectedSegmentIndex == 0 ? true : false
             self.tableView.reloadData()
         }
+    }
+    @IBAction func indexChanged(_ sender: Any) {
+        switch segmentedCtrl.selectedSegmentIndex {
+        case 0:
+            showing = "temp"
+        case 1:
+            showing = "humidity"
+        case 2:
+            showing = "wind"
+        case 3:
+            showing = "uv"
+        default:
+            break
+        }
+        tableView.reloadData()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -92,6 +116,8 @@ class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDele
         if segue.identifier == "toHourlyPopupSegue" {
             let popup = segue.destination as! HourlyPopup
             popup.tempAsC = tempAsC
+            popup.kph = kph
+            
         }
     }
 
@@ -105,7 +131,7 @@ extension HourlyScreen: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = hourlyData[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyCell") as! HourlyCell
-        cell.setHourlyWeather(data: data, tempAsC: tempAsC)
+        cell.setHourlyWeather(data: data, showing: showing, tempAsC: tempAsC, kph: kph)
         return cell
     }
 }

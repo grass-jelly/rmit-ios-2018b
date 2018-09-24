@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-A6-Gkk">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -81,6 +81,23 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="w9O-tP-zOq"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vtV-L9-4y3">
+                                <rect key="frame" x="-5" y="637" width="385" height="31"/>
+                                <color key="backgroundColor" red="0.17726602329999999" green="1" blue="0.45836748350000001" alpha="0.080452696919999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nes-PR-AUj"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="TEMP"/>
+                                    <segment title="HUMIDITY"/>
+                                    <segment title="WIND"/>
+                                    <segment title="UV INDEX"/>
+                                </segments>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="RJC-6w-8km"/>
+                                </connections>
+                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-Ay-Xzc">
                                 <rect key="frame" x="0.0" y="30" width="375" height="70"/>
                                 <subviews>
@@ -118,11 +135,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OuW-A6-Gkk" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="80" id="13D-PF-0ky"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="vtV-L9-4y3" secondAttribute="trailing" constant="-5" id="3ql-go-dcJ"/>
+                            <constraint firstItem="vtV-L9-4y3" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="-5" id="6ZH-tr-K4L"/>
                             <constraint firstItem="ThZ-Ay-Xzc" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="GLc-YM-UCc"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="OuW-A6-Gkk" secondAttribute="bottom" id="MjJ-wq-8OJ"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="OuW-A6-Gkk" secondAttribute="bottom" constant="30" id="MjJ-wq-8OJ"/>
                             <constraint firstItem="ThZ-Ay-Xzc" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Nmv-ef-NEF"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="OuW-A6-Gkk" secondAttribute="trailing" id="QWb-Dn-9vY"/>
                             <constraint firstItem="OuW-A6-Gkk" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="eH1-it-Kfb"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="vtV-L9-4y3" secondAttribute="bottom" id="nnN-AX-5ir"/>
                             <constraint firstItem="ThZ-Ay-Xzc" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="10" id="zDI-Pl-VnX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
@@ -130,6 +150,7 @@
                     <tabBarItem key="tabBarItem" title="Hourly" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="searchBar" destination="Voi-jf-Pkh" id="bh5-1b-pT8"/>
+                        <outlet property="segmentedCtrl" destination="vtV-L9-4y3" id="iWJ-Z3-Yg1"/>
                         <outlet property="tableView" destination="OuW-A6-Gkk" id="KEY-O7-0IJ"/>
                     </connections>
                 </viewController>
@@ -174,6 +195,15 @@
                                         </segments>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tQ4-mm-9gm">
+                                        <rect key="frame" x="8" y="108" width="224" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="kph"/>
+                                            <segment title="mph"/>
+                                        </segments>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -190,6 +220,7 @@
                     <connections>
                         <outlet property="saveBtn" destination="cGk-EC-kna" id="Tqf-MZ-T2p"/>
                         <outlet property="segmentCtrl" destination="FPD-k3-SeW" id="osV-7z-3Eb"/>
+                        <outlet property="segmentCtrl2" destination="tQ4-mm-9gm" id="vAj-eZ-7Cf"/>
                         <outlet property="titleLabel" destination="pqT-BI-ZlE" id="yPE-Yq-tUa"/>
                     </connections>
                 </viewController>

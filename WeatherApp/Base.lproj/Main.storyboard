@@ -47,39 +47,6 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="k2g-7n-Aqu">
-            <objects>
-                <viewController title="Settings" id="abY-Dc-gqy" customClass="SettingsScreen" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Swe-mk-pYg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" placeholder="Ho Chi Minh" translatesAutoresizingMaskIntoConstraints="NO" id="943-KD-xth">
-                                <rect key="frame" x="0.0" y="32" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="abY-Dc-gqy" id="Ffp-VD-TdM"/>
-                                </connections>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="943-KD-xth" secondAttribute="trailing" id="AvY-SU-rAF"/>
-                            <constraint firstItem="943-KD-xth" firstAttribute="top" secondItem="1zF-fC-0Bk" secondAttribute="top" constant="12" id="gla-OP-lUM"/>
-                            <constraint firstItem="943-KD-xth" firstAttribute="leading" secondItem="Swe-mk-pYg" secondAttribute="leading" id="rAA-4F-jqf"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="1zF-fC-0Bk"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="eCb-PO-SwA"/>
-                    <connections>
-                        <outlet property="searchBar" destination="943-KD-xth" id="ijQ-jz-LSD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dm2-IF-bHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1" y="778"/>
-        </scene>
         <!--Next 7-->
         <scene sceneID="lEL-bD-pNS">
             <objects>
@@ -126,7 +93,6 @@
                         <segue destination="xi4-ZW-S9E" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="nOi-jE-6Wg" kind="relationship" relationship="viewControllers" id="9HM-c8-jv3"/>
                         <segue destination="haC-Em-yjG" kind="relationship" relationship="viewControllers" id="YDF-By-5O2"/>
-                        <segue destination="abY-Dc-gqy" kind="relationship" relationship="viewControllers" id="g9w-cJ-aPF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
