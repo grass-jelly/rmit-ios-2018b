@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,111 +80,6 @@
             </objects>
             <point key="canvasLocation" x="-1" y="778"/>
         </scene>
-        <!--Hourly-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController title="Hourly" id="8rJ-Kc-sve" customClass="HourlyScreen" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="87" y="312" width="201.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-A6-Gkk">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourlyCell" id="mbF-7z-1vo" customClass="HourlyCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbF-7z-1vo" id="yyB-ZX-u6G">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-pn-Bm8">
-                                                    <rect key="frame" x="162.5" y="14.5" width="50" height="50.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="Cpi-5k-Zu4"/>
-                                                        <constraint firstAttribute="width" secondItem="dHg-pn-Bm8" secondAttribute="height" multiplier="1:1" id="Uo7-b7-LA3"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzV-Cw-YkX">
-                                                    <rect key="frame" x="12" y="25" width="130.5" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Tu6-kG-Lnk"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TempLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrE-2s-vYp">
-                                                    <rect key="frame" x="224.5" y="25" width="138.5" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Jj4-wZ-zgy"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="lzV-Cw-YkX" firstAttribute="leading" secondItem="yyB-ZX-u6G" secondAttribute="leading" constant="12" id="3KL-3g-1dE"/>
-                                                <constraint firstItem="dHg-pn-Bm8" firstAttribute="centerY" secondItem="yyB-ZX-u6G" secondAttribute="centerY" id="GVZ-uB-cSJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="zrE-2s-vYp" secondAttribute="trailing" constant="12" id="W1d-Oo-8Mu"/>
-                                                <constraint firstItem="dHg-pn-Bm8" firstAttribute="centerX" secondItem="yyB-ZX-u6G" secondAttribute="centerX" id="WJh-CB-H8d"/>
-                                                <constraint firstItem="dHg-pn-Bm8" firstAttribute="leading" secondItem="lzV-Cw-YkX" secondAttribute="trailing" constant="20" id="ZDE-Se-h9h"/>
-                                                <constraint firstItem="zrE-2s-vYp" firstAttribute="centerY" secondItem="yyB-ZX-u6G" secondAttribute="centerY" id="bdp-ff-WoP"/>
-                                                <constraint firstItem="lzV-Cw-YkX" firstAttribute="centerY" secondItem="yyB-ZX-u6G" secondAttribute="centerY" id="euk-HB-gWw"/>
-                                                <constraint firstItem="zrE-2s-vYp" firstAttribute="leading" secondItem="dHg-pn-Bm8" secondAttribute="trailing" constant="12" id="sUR-Fr-CHL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="hourlyImgView" destination="dHg-pn-Bm8" id="sVq-TD-BQ0"/>
-                                            <outlet property="tempLabel" destination="zrE-2s-vYp" id="uHz-wT-Qif"/>
-                                            <outlet property="timeLabel" destination="lzV-Cw-YkX" id="QGQ-RI-Jut"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="DD6-21-HiE"/>
-                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="w9O-tP-zOq"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="OuW-A6-Gkk" secondAttribute="bottom" id="MjJ-wq-8OJ"/>
-                            <constraint firstItem="OuW-A6-Gkk" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="Nv2-re-XUh"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="OuW-A6-Gkk" secondAttribute="trailing" id="QWb-Dn-9vY"/>
-                            <constraint firstItem="OuW-A6-Gkk" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="eH1-it-Kfb"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Hourly" image="second" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="tableView" destination="OuW-A6-Gkk" id="KEY-O7-0IJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="360"/>
-        </scene>
         <!--Next 7-->
         <scene sceneID="lEL-bD-pNS">
             <objects>
@@ -218,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-970" y="277"/>
         </scene>
-        <!--Custom Tab Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="CustomTabController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -229,7 +123,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="xi4-ZW-S9E" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="nOi-jE-6Wg" kind="relationship" relationship="viewControllers" id="9HM-c8-jv3"/>
                         <segue destination="haC-Em-yjG" kind="relationship" relationship="viewControllers" id="YDF-By-5O2"/>
                         <segue destination="abY-Dc-gqy" kind="relationship" relationship="viewControllers" id="g9w-cJ-aPF"/>
@@ -238,6 +132,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Hourly-->
+        <scene sceneID="X2h-EF-DVd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hourly" id="xi4-ZW-S9E" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Ujh-nz-Joo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KzV-hi-gQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
     </scenes>
     <resources>

@@ -14,9 +14,13 @@ class HourlyCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     
-    func setHourlyWeather(data: HourlyWeather) {
+    func setHourlyWeather(data: HourlyWeather, tempAsC: Bool) {
         hourlyImgView.image = UIImage(named: data.icon)
         timeLabel.text = data.time
-        tempLabel.text = "\(Int(data.temp))°"
+        if tempAsC {
+            tempLabel.text = "\(Int( (data.temp - 32) / 1.8 ))°"
+        } else {
+            tempLabel.text = "\(Int(data.temp))°"
+        }
     }
 }

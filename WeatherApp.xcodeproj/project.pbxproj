@@ -14,8 +14,9 @@
 		EBDEDED82157583B00844D2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDEDED62157583B00844D2D /* LaunchScreen.storyboard */; };
 		EBDEDEE0215761BC00844D2D /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDEDF215761BC00844D2D /* HourlyCell.swift */; };
 		EBDEDEE22157630D00844D2D /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDEE12157630D00844D2D /* HourlyWeather.swift */; };
-		EBDEDEE42157666200844D2D /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDEE32157666200844D2D /* SettingsScreen.swift */; };
-		EBDEDEE621576FF400844D2D /* CustomTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDEE521576FF400844D2D /* CustomTabController.swift */; };
+		EBDEDEEA2158DE4300844D2D /* Hourly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDEDEE82158DE4300844D2D /* Hourly.storyboard */; };
+		EBDEDEEC2158E4E100844D2D /* HourlyPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDEEB2158E4E100844D2D /* HourlyPopup.swift */; };
+		EBDEDEEE2158F43B00844D2D /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDEED2158F43B00844D2D /* NotificationNameExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		EBDEDED92157583B00844D2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBDEDEDF215761BC00844D2D /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
 		EBDEDEE12157630D00844D2D /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
-		EBDEDEE32157666200844D2D /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		EBDEDEE521576FF400844D2D /* CustomTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabController.swift; sourceTree = "<group>"; };
+		EBDEDEE92158DE4300844D2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeatherApp/Base.lproj/Hourly.storyboard; sourceTree = "<group>"; };
+		EBDEDEEB2158E4E100844D2D /* HourlyPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyPopup.swift; sourceTree = "<group>"; };
+		EBDEDEED2158F43B00844D2D /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,6 @@
 		EBDEDECA2157583B00844D2D /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				EBDEDEE521576FF400844D2D /* CustomTabController.swift */,
-				EBDEDEE32157666200844D2D /* SettingsScreen.swift */,
 				EBDEDEE72157960D00844D2D /* Hourly */,
 				EBDEDECB2157583B00844D2D /* AppDelegate.swift */,
 				EBDEDED12157583B00844D2D /* Main.storyboard */,
@@ -77,9 +77,12 @@
 		EBDEDEE72157960D00844D2D /* Hourly */ = {
 			isa = PBXGroup;
 			children = (
+				EBDEDEE82158DE4300844D2D /* Hourly.storyboard */,
 				EBDEDECF2157583B00844D2D /* HourlyScreen.swift */,
 				EBDEDEDF215761BC00844D2D /* HourlyCell.swift */,
 				EBDEDEE12157630D00844D2D /* HourlyWeather.swift */,
+				EBDEDEEB2158E4E100844D2D /* HourlyPopup.swift */,
+				EBDEDEED2158F43B00844D2D /* NotificationNameExtension.swift */,
 			);
 			path = Hourly;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				EBDEDED82157583B00844D2D /* LaunchScreen.storyboard in Resources */,
 				EBDEDED52157583B00844D2D /* Assets.xcassets in Resources */,
 				EBDEDED32157583B00844D2D /* Main.storyboard in Resources */,
+				EBDEDEEA2158DE4300844D2D /* Hourly.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,11 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBDEDED02157583B00844D2D /* HourlyScreen.swift in Sources */,
-				EBDEDEE621576FF400844D2D /* CustomTabController.swift in Sources */,
 				EBDEDECC2157583B00844D2D /* AppDelegate.swift in Sources */,
 				EBDEDEE0215761BC00844D2D /* HourlyCell.swift in Sources */,
+				EBDEDEEC2158E4E100844D2D /* HourlyPopup.swift in Sources */,
 				EBDEDEE22157630D00844D2D /* HourlyWeather.swift in Sources */,
-				EBDEDEE42157666200844D2D /* SettingsScreen.swift in Sources */,
+				EBDEDEEE2158F43B00844D2D /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +186,14 @@
 				EBDEDED72157583B00844D2D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EBDEDEE82158DE4300844D2D /* Hourly.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBDEDEE92158DE4300844D2D /* Base */,
+			);
+			name = Hourly.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

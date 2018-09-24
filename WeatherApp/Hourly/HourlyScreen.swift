@@ -9,29 +9,55 @@
 import UIKit
 import CoreLocation
 
-class HourlyScreen: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    
-    var hourlyData:[HourlyWeather] = []
-    
+class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     let api = "https://api.darksky.net/forecast/b9fc9277797647a38161d0f28d058376/"
+    let locationManager = CLLocationManager()
+    var hourlyData:[HourlyWeather] = []
+    var tempAsC:Bool = true
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        if let tbc = self.tabBarController as? CustomTabController {
-//            if let location = tbc.location {
-//                onLocationUpdate(coordinate: location)
-//            }
-//        }
-//    }
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    override func viewWillAppear(_ animated: Bool) {
-        if let tbc = self.tabBarController as? CustomTabController {
-            if let location = tbc.location {
-                onLocationUpdate(coordinate: location)
-            }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        NotificationCenter.default.addObserver(forName: .save, object: nil, queue: OperationQueue.main) {
+            (notification) in
+            let popup = notification.object as! HourlyPopup
+            self.tempAsC = popup.segmentCtrl.selectedSegmentIndex == 0 ? true : false
+            self.tableView.reloadData()
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        onLocationUpdate(coordinate: "\(locValue.latitude),\(locValue.longitude)")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        if let locationName = searchBar.text, !locationName.isEmpty {
+            CLGeocoder().geocodeAddressString(locationName) { (placemarks, error) in
+                if error != nil || placemarks == nil {/**/}
+                else {
+                    if let loc = placemarks!.first?.location {
+                            let coordinate = "\(loc.coordinate.latitude),\(loc.coordinate.longitude)"
+                            self.onLocationUpdate(coordinate: coordinate)
+                        }
+                    }
+                }
+            }
+        }
     
     func onLocationUpdate(coordinate:String) {
         var tmp:[HourlyWeather] = []
@@ -62,16 +88,13 @@ class HourlyScreen: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHourlyPopupSegue" {
+            let popup = segue.destination as! HourlyPopup
+            popup.tempAsC = tempAsC
+        }
+    }
+
 }
 
 extension HourlyScreen: UITableViewDataSource, UITableViewDelegate {
@@ -82,11 +105,9 @@ extension HourlyScreen: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = hourlyData[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "HourlyCell") as! HourlyCell
-        cell.setHourlyWeather(data: data)
+        cell.setHourlyWeather(data: data, tempAsC: tempAsC)
         return cell
     }
-    
-    
 }
 
 
