@@ -1,10 +1,13 @@
-//
-//  NotificationNameExtension.swift
-//  WeatherApp
-//
-//  Created by Linh Do on 9/24/18.
-//  Copyright © 2018 Linh Do. All rights reserved.
-//
+/*
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2018B
+ Assessment: Project
+ Author: Linh Do
+ ID: 3689251
+ Created date: 22/09/2018
+ Acknowledgment:
+ */
 
 import Foundation
 extension Notification.Name {

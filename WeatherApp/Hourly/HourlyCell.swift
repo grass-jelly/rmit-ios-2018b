@@ -1,10 +1,14 @@
-//
-//  HourlyCell.swift
-//  WeatherApp
-//
-//  Created by Linh Do on 9/23/18.
-//  Copyright © 2018 Linh Do. All rights reserved.
-//
+/*
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2018B
+ Assessment: Project
+ Author: Linh Do
+ ID: 3689251
+ Created date: 22/09/2018
+ Acknowledgment:
+ Custom Cell: https://www.youtube.com/watch?v=FtO5QT2D_H8&t=744s
+ */
 
 import UIKit
 

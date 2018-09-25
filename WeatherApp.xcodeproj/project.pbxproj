@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB56BF9F215A465B00AB7457 /* HourlyPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB56BF9D215A465B00AB7457 /* HourlyPopup.storyboard */; };
 		EBDEDECC2157583B00844D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDECB2157583B00844D2D /* AppDelegate.swift */; };
 		EBDEDED02157583B00844D2D /* HourlyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDECF2157583B00844D2D /* HourlyScreen.swift */; };
 		EBDEDED32157583B00844D2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDEDED12157583B00844D2D /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB56BF9E215A465B00AB7457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeatherApp/Hourly/WeatherApp/Base.lproj/HourlyPopup.storyboard; sourceTree = "<group>"; };
 		EBDEDEC82157583B00844D2D /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDEDECB2157583B00844D2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBDEDECF2157583B00844D2D /* HourlyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyScreen.swift; sourceTree = "<group>"; };
@@ -77,11 +79,12 @@
 		EBDEDEE72157960D00844D2D /* Hourly */ = {
 			isa = PBXGroup;
 			children = (
-				EBDEDEE82158DE4300844D2D /* Hourly.storyboard */,
 				EBDEDECF2157583B00844D2D /* HourlyScreen.swift */,
+				EBDEDEE82158DE4300844D2D /* Hourly.storyboard */,
 				EBDEDEDF215761BC00844D2D /* HourlyCell.swift */,
 				EBDEDEE12157630D00844D2D /* HourlyWeather.swift */,
 				EBDEDEEB2158E4E100844D2D /* HourlyPopup.swift */,
+				EB56BF9D215A465B00AB7457 /* HourlyPopup.storyboard */,
 				EBDEDEED2158F43B00844D2D /* NotificationNameExtension.swift */,
 			);
 			path = Hourly;
@@ -148,6 +151,7 @@
 			files = (
 				EBDEDED82157583B00844D2D /* LaunchScreen.storyboard in Resources */,
 				EBDEDED52157583B00844D2D /* Assets.xcassets in Resources */,
+				EB56BF9F215A465B00AB7457 /* HourlyPopup.storyboard in Resources */,
 				EBDEDED32157583B00844D2D /* Main.storyboard in Resources */,
 				EBDEDEEA2158DE4300844D2D /* Hourly.storyboard in Resources */,
 			);
@@ -172,6 +176,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		EB56BF9D215A465B00AB7457 /* HourlyPopup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB56BF9E215A465B00AB7457 /* Base */,
+			);
+			name = HourlyPopup.storyboard;
+			sourceTree = "<group>";
+		};
 		EBDEDED12157583B00844D2D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

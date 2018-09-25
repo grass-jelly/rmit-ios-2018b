@@ -1,13 +1,22 @@
-//
-//  HourlyScreen.swift
-//  WeatherApp
-//
-//  Created by Linh Do on 9/22/18.
-//  Copyright © 2018 Linh Do. All rights reserved.
-//
+/*
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2018B
+ Assessment: Project
+ Author: Linh Do
+ ID: 3689251
+ Created date: 22/09/2018
+ Acknowledgment:
+ gets current location: https://stackoverflow.com/questions/25296691/get-users-current-location-coordinates
+ URLSession: https://www.lynda.com/iOS-tutorials/Manage-text-JSON-from-server/645028/682880-4.html
+ SegmentedControl: https://www.ioscreator.com/tutorials/segmented-control-tutorial-ios10
+ MapKit: https://www.youtube.com/watch?v=GYzNsVFyDrU
+ Timezone: https://stackoverflow.com/questions/47212198/getting-time-in-swift-4
+ */
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDelegate {
     let api = "https://api.darksky.net/forecast/b9fc9277797647a38161d0f28d058376/"
@@ -22,8 +31,10 @@ class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDele
     // display cells according to segmented control 
     var showing:String = "temp"
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     @IBOutlet weak var segmentedCtrl: UISegmentedControl!
     override func viewDidLoad() {
@@ -63,47 +74,78 @@ class HourlyScreen: UIViewController, UISearchBarDelegate, CLLocationManagerDele
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        onLocationUpdate(coordinate: "\(locValue.latitude),\(locValue.longitude)")
+        guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        mapView.showsUserLocation = true
+        centerView(center: coordinate)
+        onLocationUpdate(coordinate: coordinate)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        
         if let locationName = searchBar.text, !locationName.isEmpty {
-            CLGeocoder().geocodeAddressString(locationName) { (placemarks, error) in
-                if error != nil || placemarks == nil {/**/}
+            
+            // make search request (search bar text)
+            let searchRequest = MKLocalSearchRequest()
+            searchRequest.naturalLanguageQuery = locationName
+            let activeSearch = MKLocalSearch(request: searchRequest)
+            
+            // handle search response (coordinate)
+            activeSearch.start(completionHandler: { (res, err) in
+                if (res == nil) {return}
                 else {
-                    if let loc = placemarks!.first?.location {
-                            let coordinate = "\(loc.coordinate.latitude),\(loc.coordinate.longitude)"
-                            self.onLocationUpdate(coordinate: coordinate)
-                        }
-                    }
+                    let coordinate = res?.boundingRegion.center
+                    
+                    // remove annotations
+                    let annotations = self.mapView.annotations
+                    self.mapView.removeAnnotations(annotations)
+                    
+                    // add annotation
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate!
+                    self.mapView.addAnnotation(annotation)
+                    
+                    // center map
+                    self.centerView(center: coordinate!)
+                    
+                    // update tableview
+                    self.onLocationUpdate(coordinate: coordinate!)
                 }
-            }
+            })
         }
+    }
     
-    func onLocationUpdate(coordinate:String) {
+    func centerView(center:CLLocationCoordinate2D) {
+        let region = MKCoordinateRegionMakeWithDistance(center, 10000, 10000)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func onLocationUpdate(coordinate:CLLocationCoordinate2D) {
         var tmp:[HourlyWeather] = []
-        if let urlToServer = URL.init(string: api+coordinate) {
+        
+        let coordinateString = "\(coordinate.latitude),\(coordinate.longitude)"
+        
+        if let urlToServer = URL.init(string: api+coordinateString) {
             let task = URLSession.shared.dataTask(with: urlToServer, completionHandler: { (data, response, error)  in
-                if error != nil || data == nil {/**/}
+                if error != nil || data == nil { return }
                 else {
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any] {
-                            if let hourly = json["hourly"] as? [String:Any] {
-                                if let data = hourly["data"] as? [[String:Any]] {
-                                    for hour in data {
-                                        if let hourlyObj = try? HourlyWeather(json: hour) {
-                                            tmp.append(hourlyObj)
+                            if let timezone = json["timezone"] as? String {
+                                if let hourly = json["hourly"] as? [String:Any] {
+                                    if let data = hourly["data"] as? [[String:Any]] {
+                                        for hour in data {
+                                            if let hourlyObj = try? HourlyWeather(json: hour, timezone:timezone) {
+                                                tmp.append(hourlyObj)
+                                            }
                                         }
+                                        self.hourlyData = tmp
+                                        DispatchQueue.main.async {self.tableView.reloadData()}
                                     }
-                                    self.hourlyData = tmp
-                                    DispatchQueue.main.async {self.tableView.reloadData()}
                                 }
                             }
+                            
                         }
-                    } catch {/**/}
+                    } catch { return }
                 }
             })
             task.resume()
