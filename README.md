@@ -8,6 +8,8 @@ iOS Weather App ⛈❄️🦋
 </br>geocodes location input by user
 </br>URLSession: https://www.lynda.com/iOS-tutorials/Manage-text-JSON-from-server/645028/682880-4.html
 </br>SegmentedControl: https://www.ioscreator.com/tutorials/segmented-control-tutorial-ios10
+</br>MapKit: https://www.youtube.com/watch?v=GYzNsVFyDrU
+</br>TImezone: https://stackoverflow.com/questions/47212198/getting-time-in-swift-4
 </br>*
 </br>HourlyCell.swift: custom tableviewcell class for HourlyCell in storyboard 
 </br>Custom Cell: https://www.youtube.com/watch?v=FtO5QT2D_H8&t=744s
