@@ -1,10 +1,4 @@
-//
-//  Extensions.swift
-//  WeatherApp
-//
-//  Created by Bill on 9/26/18.
-//  Copyright © 2018 Linh Do. All rights reserved.
-//
+
 import Foundation
 
 extension Double{
