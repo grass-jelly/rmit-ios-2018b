@@ -1,5 +1,9 @@
 # rmit-ios-2018b
 iOS Weather App ⛈❄️🦋
+
+</br>Epoch & Unix Timestamp Conversion: https://www.epochconverter.com/
+</br>Time Machine Request https://api.darksky.net/forecast/[key]/[latitude],[longitude],[time]
+
 </br>***
 </br>Hourly:
 </br>*
