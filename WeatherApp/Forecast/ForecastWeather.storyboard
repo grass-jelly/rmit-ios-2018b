@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wot-h7-I2R">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Forecast-->
+        <scene sceneID="2nQ-fO-ZD3">
+            <objects>
+                <tableViewController title="Forecast" id="Wot-h7-I2R" customClass="ForecastTableViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SWV-GA-NKG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Ho Chi Minh" id="36C-08-T4s">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="forecastCell" rowHeight="110" id="rvj-2X-qdA" customClass="ForecastTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rvj-2X-qdA" id="OMM-ps-BgG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ITN-Id-D63">
+                                            <rect key="frame" x="10" y="5" width="106" height="100"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m94-JH-s1D">
+                                            <rect key="frame" x="124" y="78" width="43" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="qT3-o4-KVI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nti-l7-D4J">
+                                            <rect key="frame" x="124" y="11" width="235" height="59"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="59" id="7po-aC-1OB"/>
+                                                <constraint firstAttribute="width" constant="235" id="DqI-S1-Wz9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m94-JH-s1D" firstAttribute="top" secondItem="nti-l7-D4J" secondAttribute="bottom" constant="8" symbolic="YES" id="2L0-QP-xCi"/>
+                                        <constraint firstItem="m94-JH-s1D" firstAttribute="bottom" secondItem="OMM-ps-BgG" secondAttribute="bottomMargin" id="5tM-SK-C7t"/>
+                                        <constraint firstItem="ITN-Id-D63" firstAttribute="leading" secondItem="OMM-ps-BgG" secondAttribute="leading" constant="10" id="8pa-AS-vez"/>
+                                        <constraint firstItem="ITN-Id-D63" firstAttribute="top" secondItem="OMM-ps-BgG" secondAttribute="top" constant="5" id="Iig-zI-snv"/>
+                                        <constraint firstAttribute="bottom" secondItem="ITN-Id-D63" secondAttribute="bottom" constant="5" id="JEW-JM-xIb"/>
+                                        <constraint firstItem="nti-l7-D4J" firstAttribute="top" secondItem="OMM-ps-BgG" secondAttribute="topMargin" id="Rn5-3F-L0c"/>
+                                        <constraint firstItem="nti-l7-D4J" firstAttribute="trailing" secondItem="OMM-ps-BgG" secondAttribute="trailingMargin" id="T4W-tu-SrF"/>
+                                        <constraint firstItem="ITN-Id-D63" firstAttribute="centerY" secondItem="OMM-ps-BgG" secondAttribute="centerY" id="tNE-Zw-hEK"/>
+                                        <constraint firstItem="nti-l7-D4J" firstAttribute="leading" secondItem="ITN-Id-D63" secondAttribute="trailing" constant="8" symbolic="YES" id="uhq-yq-Qgb"/>
+                                        <constraint firstItem="m94-JH-s1D" firstAttribute="leading" secondItem="nti-l7-D4J" secondAttribute="leading" id="wPz-oE-8JG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="ITN-Id-D63" id="vsq-ja-z5Q"/>
+                                    <outlet property="summary" destination="nti-l7-D4J" id="ugD-vh-F2D"/>
+                                    <outlet property="temp" destination="m94-JH-s1D" id="u7R-eh-hDz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wot-h7-I2R" id="kyZ-Oi-c6p"/>
+                            <outlet property="delegate" destination="Wot-h7-I2R" id="Q9c-gY-nIt"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="36C-08-T4s" id="x9l-TC-ccH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lz6-BM-002" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1471.2" y="-152.47376311844079"/>
+        </scene>
+    </scenes>
+</document>

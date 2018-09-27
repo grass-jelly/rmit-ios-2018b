@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840BB555215CD6B00027A27D /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BB554215CD6B00027A27D /* ForecastWeather.swift */; };
+		840BB557215CDAF10027A27D /* ForecastWeather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840BB556215CDAF10027A27D /* ForecastWeather.storyboard */; };
+		840BB559215CDEDF0027A27D /* ForecastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BB558215CDEDF0027A27D /* ForecastTableViewController.swift */; };
+		840BB55F215D08260027A27D /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BB55E215D08260027A27D /* ForecastTableViewCell.swift */; };
 		EB56BF9F215A465B00AB7457 /* HourlyPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB56BF9D215A465B00AB7457 /* HourlyPopup.storyboard */; };
-		EB81069F215C88E6000BBAF8 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB81069E215C88E6000BBAF8 /* APIUrl.swift */; };
-		EB8106A1215C894E000BBAF8 /* NextWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8106A0215C894E000BBAF8 /* NextWeek.swift */; };
-		EB8106A3215C897F000BBAF8 /* NextWeekTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8106A2215C897F000BBAF8 /* NextWeekTableTableViewController.swift */; };
-		EB8106A5215C89C4000BBAF8 /* NextWeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8106A4215C89C4000BBAF8 /* NextWeekTableViewCell.swift */; };
-		EB8106A8215C89FF000BBAF8 /* NextWeek.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8106A6215C89FF000BBAF8 /* NextWeek.storyboard */; };
-		EB8106AA215C99E3000BBAF8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8106A9215C99E3000BBAF8 /* Extensions.swift */; };
 		EBDEDECC2157583B00844D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDECB2157583B00844D2D /* AppDelegate.swift */; };
 		EBDEDED02157583B00844D2D /* HourlyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDECF2157583B00844D2D /* HourlyScreen.swift */; };
 		EBDEDED32157583B00844D2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDEDED12157583B00844D2D /* Main.storyboard */; };
@@ -30,14 +28,12 @@
 /* Begin PBXFileReference section */
 		172E42C6B484CB8A0F2142CE /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E5C37FABB5AAE4E4E38D37 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		840BB554215CD6B00027A27D /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
+		840BB556215CDAF10027A27D /* ForecastWeather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForecastWeather.storyboard; sourceTree = "<group>"; };
+		840BB558215CDEDF0027A27D /* ForecastTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewController.swift; sourceTree = "<group>"; };
+		840BB55E215D08260027A27D /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		BD15023E79684D5601BB5965 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		EB56BF9E215A465B00AB7457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeatherApp/Hourly/WeatherApp/Base.lproj/HourlyPopup.storyboard; sourceTree = "<group>"; };
-		EB81069E215C88E6000BBAF8 /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
-		EB8106A0215C894E000BBAF8 /* NextWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeek.swift; sourceTree = "<group>"; };
-		EB8106A2215C897F000BBAF8 /* NextWeekTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekTableTableViewController.swift; sourceTree = "<group>"; };
-		EB8106A4215C89C4000BBAF8 /* NextWeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekTableViewCell.swift; sourceTree = "<group>"; };
-		EB8106A7215C89FF000BBAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeatherApp/Base.lproj/NextWeek.storyboard; sourceTree = "<group>"; };
-		EB8106A9215C99E3000BBAF8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EBDEDEC82157583B00844D2D /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDEDECB2157583B00844D2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBDEDECF2157583B00844D2D /* HourlyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyScreen.swift; sourceTree = "<group>"; };
@@ -64,6 +60,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840BB551215CD32B0027A27D /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				840BB558215CDEDF0027A27D /* ForecastTableViewController.swift */,
+				840BB55E215D08260027A27D /* ForecastTableViewCell.swift */,
+				840BB554215CD6B00027A27D /* ForecastWeather.swift */,
+				840BB556215CDAF10027A27D /* ForecastWeather.storyboard */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
 		BFA309CE8166DB8BE1160AD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,19 +86,6 @@
 				172E42C6B484CB8A0F2142CE /* Pods_WeatherApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EB81069D215C888B000BBAF8 /* NextWeek */ = {
-			isa = PBXGroup;
-			children = (
-				EB8106A6215C89FF000BBAF8 /* NextWeek.storyboard */,
-				EB81069E215C88E6000BBAF8 /* APIUrl.swift */,
-				EB8106A0215C894E000BBAF8 /* NextWeek.swift */,
-				EB8106A2215C897F000BBAF8 /* NextWeekTableTableViewController.swift */,
-				EB8106A4215C89C4000BBAF8 /* NextWeekTableViewCell.swift */,
-				EB8106A9215C99E3000BBAF8 /* Extensions.swift */,
-			);
-			path = NextWeek;
 			sourceTree = "<group>";
 		};
 		EBDEDEBF2157583B00844D2D = {
@@ -115,7 +109,7 @@
 		EBDEDECA2157583B00844D2D /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				EB81069D215C888B000BBAF8 /* NextWeek */,
+				840BB551215CD32B0027A27D /* Forecast */,
 				EBDEDEE72157960D00844D2D /* Hourly */,
 				EBDEDECB2157583B00844D2D /* AppDelegate.swift */,
 				EBDEDED12157583B00844D2D /* Main.storyboard */,
@@ -202,11 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBDEDED82157583B00844D2D /* LaunchScreen.storyboard in Resources */,
-				EB8106A8215C89FF000BBAF8 /* NextWeek.storyboard in Resources */,
 				EBDEDED52157583B00844D2D /* Assets.xcassets in Resources */,
 				EB56BF9F215A465B00AB7457 /* HourlyPopup.storyboard in Resources */,
 				EBDEDED32157583B00844D2D /* Main.storyboard in Resources */,
 				EBDEDEEA2158DE4300844D2D /* Hourly.storyboard in Resources */,
+				840BB557215CDAF10027A27D /* ForecastWeather.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,15 +253,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBDEDED02157583B00844D2D /* HourlyScreen.swift in Sources */,
-				EB8106A3215C897F000BBAF8 /* NextWeekTableTableViewController.swift in Sources */,
 				EBDEDECC2157583B00844D2D /* AppDelegate.swift in Sources */,
+				840BB555215CD6B00027A27D /* ForecastWeather.swift in Sources */,
+				840BB55F215D08260027A27D /* ForecastTableViewCell.swift in Sources */,
 				EBDEDEE0215761BC00844D2D /* HourlyCell.swift in Sources */,
-				EB8106A5215C89C4000BBAF8 /* NextWeekTableViewCell.swift in Sources */,
 				EBDEDEEC2158E4E100844D2D /* HourlyPopup.swift in Sources */,
-				EB8106A1215C894E000BBAF8 /* NextWeek.swift in Sources */,
+				840BB559215CDEDF0027A27D /* ForecastTableViewController.swift in Sources */,
 				EBDEDEE22157630D00844D2D /* HourlyWeather.swift in Sources */,
-				EB81069F215C88E6000BBAF8 /* APIUrl.swift in Sources */,
-				EB8106AA215C99E3000BBAF8 /* Extensions.swift in Sources */,
 				EBDEDEEE2158F43B00844D2D /* NotificationNameExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,14 +273,6 @@
 				EB56BF9E215A465B00AB7457 /* Base */,
 			);
 			name = HourlyPopup.storyboard;
-			sourceTree = "<group>";
-		};
-		EB8106A6215C89FF000BBAF8 /* NextWeek.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB8106A7215C89FF000BBAF8 /* Base */,
-			);
-			name = NextWeek.storyboard;
 			sourceTree = "<group>";
 		};
 		EBDEDED12157583B00844D2D /* Main.storyboard */ = {
