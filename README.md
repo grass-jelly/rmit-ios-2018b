@@ -1,7 +1,7 @@
 # rmit-ios-2018b
 iOS Weather App ⛈❄️🦋
 
-please run: "pod updatel" in Terminal before using the app
+please run: "pod update" in Terminal before using the app
 
 </br>Epoch & Unix Timestamp Conversion: https://www.epochconverter.com/
 </br>Time Machine Request https://api.darksky.net/forecast/[key]/[latitude],[longitude],[time]
