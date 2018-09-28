@@ -17,6 +17,7 @@
 		84166D6D215DC0B200C39CE7 /* ForecastWeather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84166D69215DC0B200C39CE7 /* ForecastWeather.storyboard */; };
 		84166D6E215DC0B200C39CE7 /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84166D6A215DC0B200C39CE7 /* ForecastWeather.swift */; };
 		84166D6F215DC0B200C39CE7 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84166D6B215DC0B200C39CE7 /* ForecastTableViewCell.swift */; };
+		84166D74215DFE3300C39CE7 /* CurrentWeather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84166D72215DFE3300C39CE7 /* CurrentWeather.storyboard */; };
 		EB56BF9F215A465B00AB7457 /* HourlyPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB56BF9D215A465B00AB7457 /* HourlyPopup.storyboard */; };
 		EBDEDECC2157583B00844D2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDECB2157583B00844D2D /* AppDelegate.swift */; };
 		EBDEDED02157583B00844D2D /* HourlyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDECF2157583B00844D2D /* HourlyScreen.swift */; };
@@ -43,6 +44,7 @@
 		84166D69215DC0B200C39CE7 /* ForecastWeather.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForecastWeather.storyboard; sourceTree = "<group>"; };
 		84166D6A215DC0B200C39CE7 /* ForecastWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 		84166D6B215DC0B200C39CE7 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		84166D73215DFE3300C39CE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../Downloads/rmit-ios-2018b-master/WeatherApp/Base.lproj/CurrentWeather.storyboard"; sourceTree = "<group>"; };
 		BD15023E79684D5601BB5965 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		EB56BF9E215A465B00AB7457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WeatherApp/Hourly/WeatherApp/Base.lproj/HourlyPopup.storyboard; sourceTree = "<group>"; };
 		EBDEDEC82157583B00844D2D /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 		84166D49215CDC1C00C39CE7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84166D72215DFE3300C39CE7 /* CurrentWeather.storyboard */,
 				84166D5F215CDD4500C39CE7 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -255,6 +258,7 @@
 				84166D46215CDAD800C39CE7 /* Main.storyboard in Resources */,
 				EBDEDED82157583B00844D2D /* LaunchScreen.storyboard in Resources */,
 				84166D6D215DC0B200C39CE7 /* ForecastWeather.storyboard in Resources */,
+				84166D74215DFE3300C39CE7 /* CurrentWeather.storyboard in Resources */,
 				EBDEDED52157583B00844D2D /* Assets.xcassets in Resources */,
 				EB56BF9F215A465B00AB7457 /* HourlyPopup.storyboard in Resources */,
 				EBDEDEEA2158DE4300844D2D /* Hourly.storyboard in Resources */,
@@ -353,6 +357,14 @@
 				84166D45215CDAD800C39CE7 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84166D72215DFE3300C39CE7 /* CurrentWeather.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84166D73215DFE3300C39CE7 /* Base */,
+			);
+			name = CurrentWeather.storyboard;
 			sourceTree = "<group>";
 		};
 		EB56BF9D215A465B00AB7457 /* HourlyPopup.storyboard */ = {
