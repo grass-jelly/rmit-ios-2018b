@@ -1,7 +1,29 @@
+/*
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2018B
+ Assessment: Project
+ Author: Vu Hong Lan
+ ID: s3557614
+ Created date: 22/09/2018
+ Acknowledgment:
+ API:
+ 1/ https://openweathermap.org/current
+ 2/ https://darksky.net/dev
+ CurrentWeather + Obtain API + Format to display in UI:
+ 1/ https://www.youtube.com/watch?v=BrWbRgacHKo
+ 2/ https://www.youtube.com/watch?v=JHAL17hP7YY
+ 3/ https://www.youtube.com/watch?v=98e77NwfXjM
+ Timer:
+ https://stackoverflow.com/questions/25951980/do-something-every-x-minutes-in-swift
+ Search Location - Google Maps
+ 1/https://developers.google.com/places/ios-sdk/autocomplete#add_a_results_controller
+ 2/https://medium.freecodecamp.org/how-you-can-use-the-google-maps-sdk-with-ios-using-swift-4-a9bba26d9c4d
+ */
 import UIKit
 import CoreLocation
 import GoogleMaps
-import MapKit
+import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
@@ -30,10 +52,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
+    //Set a timer so that every 60 seconds it will redownload the API
+    weak var timer: Timer?
     
 //Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        startTimer()
         changeBGImg()
         currentWeather = CurrentWeather()
         callDelegate()
@@ -49,7 +74,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     func callDelegate() {
         locationManager.delegate = self
     }
-    
+//*********TIMER*********//
+    //Start timer
+    func startTimer(){
+        stopTimer() //In case there is another timer running
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(ViewController.redownloadAPI), userInfo: nil, repeats: true)
+    }
+    //Timer behaviour
+    @objc func redownloadAPI()
+    {
+        //print("Redownload Successful") //Uncheck to make sure it works properly
+        currentWeather.downloadCurrentWeather {
+            self.updateUI()
+        }
+        stopTimer()
+        startTimer()
+    }
+    //Stop timer
+    func stopTimer() {
+        timer?.invalidate()
+    }
+
 //*********Search Bar*********//
     //Search City Name
     func searchCityName(){
@@ -89,10 +134,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                 Location.sharedInstance.latitude = currentLocation.coordinate.latitude
                 Location.sharedInstance.longitude = currentLocation.coordinate.longitude
                 //Download API data of that coordinate
-                currentWeather.downloadCurrentWeather {
-                    //Update UI after download successful
-                    self.updateUI()
-                }
+                redownloadAPI()
             }
         }else{
             locationManager.requestWhenInUseAuthorization() //Ask permission again
@@ -105,11 +147,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     //Update UI
     func updateUI() {
         cityName.text = currentWeather.cityName
-        temperature.text = "\(currentWeather.currentTemp)°C"
+        temperature.text = "\(currentWeather.currentTemp.rounded(toPlaces: 1))°C"
         weatherType.text = currentWeather.weatherType
         date.text = currentWeather.date
         humidity.text = "Humidity: \(currentWeather.humidity)%"
         uvLevel.text = "UV: \(currentWeather.uvLevel)"
+        windGust.text = "\(currentWeather.windGust) kmph"
+        windSpeed.text = "\(currentWeather.windSpeed) kmph"
         changeColor()
         changeWeatherIcon()
     }
@@ -119,9 +163,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         if hour >= 18 || hour <= 5 {
             background.image = UIImage(named: "nightTIme")
             cityName.textColor = UIColor.white
+            windSpeed.textColor = UIColor.white
+            windGust.textColor = UIColor.white
         }
         else {
             background.image = UIImage(named: "cloudBG")
+            cityName.textColor = UIColor.black
+            windSpeed.textColor = UIColor.black
+            windGust.textColor = UIColor.black
         }
     }
     
@@ -166,8 +215,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         let fahrenheit = temperature * 9 / 5 + 32
         return fahrenheit
     }
-    //Temperature switch
-    
+    //Temperature switch between fahrenheit and celsius
     @IBAction func switchTemp(_ sender: Any) {
         let celsius = currentWeather.currentTemp.rounded(toPlaces: 1)
         let fahrenheit = (celsius * 9 / 5 + 32).rounded(toPlaces: 1)
@@ -178,29 +226,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         }
     }
 }
-//Ref: https://developers.google.com/places/ios-sdk/autocomplete#add_a_results_controller
+
 // Handle the user's selection.
 extension ViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
-        // Do something with the selected place.
-        //currentLocation = locationManager.location
-        print("Place name: \(place.name)")
-        print("Place latitude: \((place.coordinate.latitude).rounded(toPlaces: 2))")
-        print("Place longitude: \((place.coordinate.longitude).rounded(toPlaces: 2))")
         if let loc = locationManager.location {
             //Pass coordinate to API in Extras.swift
             latitude = ((place.coordinate.latitude).rounded(toPlaces: 2))
             longitude = ((place.coordinate.longitude).rounded(toPlaces: 2))
-            print("Lat: ", Location.sharedInstance.latitude)
-            print("Lon: ", Location.sharedInstance.longitude)
-            //Download API data of that coordinate
-            currentWeather.downloadCurrentWeather {
-                //Update UI after download successful
-                print(self)
-                self.updateUI()
-            }
+            redownloadAPI()
         }
     }
     
